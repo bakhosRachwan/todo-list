@@ -1,13 +1,14 @@
+import { useContext } from "react";
+import {StateContext} from "../State/State"
+
 const InputForm = () => {
+const [state, dispatch] = useContext(StateContext);
 
 const handleSubmit = (e) => {
     e.preventDefault();
     const { task, deadline, priority } = e.target;
-    const taskInfo = {
-        task: task.value,
-        date: deadline.value,
-        priority: priority.value,
-    }
+    
+    dispatch({type: "SET_TODO", task: task.value, deadline: deadline.value, priority: priority.value})
 }
     return (
         <div className="mt-5 md:mt-3 md:col-span-1">
