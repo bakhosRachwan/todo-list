@@ -7,8 +7,8 @@ const [state, dispatch] = useContext(StateContext);
 const handleSubmit = (e) => {
     e.preventDefault();
     const { task, deadline, priority } = e.target;
-    
     dispatch({type: "SET_TODO", task: task.value, deadline: deadline.value, priority: priority.value})
+    e.target.reset()
 }
     return (
         <div className="mt-5 md:mt-3 md:col-span-1">
@@ -21,7 +21,7 @@ const handleSubmit = (e) => {
                                     Task
                                  </label>
                                 <div className="mt-1 flex rounded-md shadow-sm">
-                                    <input type="text" name="task" id="task" className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full h-9 rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="Enter ToDo Task..." />
+                                    <input type="text" name="task" id="task" className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full h-9 rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="Enter ToDo Task..." required/>
                                 </div>
                             </div>
                             <div className="col-span-3 sm:col-span-2">
@@ -29,7 +29,7 @@ const handleSubmit = (e) => {
                                     Deadline
                                  </label>
                                 <div className="mt-1 flex rounded-md shadow-sm">
-                                    <input type="date" name="deadline" id="deadline" className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full h-9 rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="Enter ToDo Task..." />
+                                    <input type="date" name="deadline" id="deadline" className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full h-9 rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="Enter ToDo Task..." required/>
                                 </div>
                             </div>
                         </div>
