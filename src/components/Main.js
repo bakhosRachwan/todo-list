@@ -8,7 +8,7 @@ const handleClick = () => {
 }
 
 const Main = () => {
-    const [state, dispatch] = useContext(StateContext)
+    let [state] = useContext(StateContext)
     return (
         <div>
             <div className="px-8 py-8 md:grid md:grid-cols-3 md:gap-6">

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import {StateContext} from "../State/State"
 
 const InputForm = () => {
-const [state, dispatch] = useContext(StateContext);
+let [,dispatch] = useContext(StateContext);
 
 const handleSubmit = (e) => {
     e.preventDefault();

@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { StateContext } from "../State/State";
 
 const TodoItem = ({task}) => {
-  const [state, dispatch] = useContext(StateContext);
+  let [,dispatch] = useContext(StateContext);
   const [done, setDone] = useState(false);
 
   const handleDelete = () => {

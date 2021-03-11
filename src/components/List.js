@@ -3,7 +3,7 @@ import { StateContext } from "../State/State";
 import TodoItem from "./Todoitem";
 
 const List = () => {
- const [state, dispatch] = useContext(StateContext)
+ let [state] = useContext(StateContext)
 
 return ( 
 <div class="flex flex-col">
